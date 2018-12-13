@@ -69,7 +69,7 @@ var bgColors = [
 'Gold',
 'Blue',
 'Silver',
-'Aqua',
+'Teal',
 'Orange'
 
 ];
