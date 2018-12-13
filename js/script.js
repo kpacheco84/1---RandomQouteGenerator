@@ -3,13 +3,12 @@ Treehouse Techdegree:
 FSJS project 1 - A Random Quote Generator
 ******************************************/
 
-//NOTES TO SELF:tommorow add to github and initialize button if 20 seconds has past
-
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
 
 
-// qoutes from mhttps://www.briantracy.com/blog/personal-success/26-motivational-quotes-for-success/
+
+// qoutes from https://www.briantracy.com/blog/personal-success/26-motivational-quotes-for-success/
+// about from https://www.wikepedia.com
 
 //quotes array
   var quotes = [
@@ -20,7 +19,7 @@ FSJS project 1 - A Random Quote Generator
   
       source: 'Walt Disney',
   
-      about: 'an American entrepreneur, animator, voice actor and film producer'
+      about: '(an American entrepreneur, animator, voice actor and film producer)'
   
     },
     {
@@ -30,7 +29,7 @@ FSJS project 1 - A Random Quote Generator
   
       source: 'Winston Churchill',
   
-      about: 'a British politician, statesman, army officer, and writer, who was Prime Minister of the United Kingdom from 1940 to 1945 and again from 1951 to 1955'
+      about: '(a British politician, statesman, army officer, and writer, who was Prime Minister of the United Kingdom from 1940 to 1945 and again from 1951 to 1955)'
   
     },
     {
@@ -39,7 +38,7 @@ FSJS project 1 - A Random Quote Generator
   
       source: 'Will Rogers',
   
-      about: 'an American stage and motion picture actor, vaudeville performer, American cowboy, humorist, newspaper columnist, and social commentator from Oklahoma'
+      about: '(an American stage and motion picture actor, vaudeville performer, American cowboy, humorist, newspaper columnist, and social commentator from Oklahoma)'
   
     },
     {
@@ -48,7 +47,7 @@ FSJS project 1 - A Random Quote Generator
   
       source: 'Unknown',
   
-      about: 'unknown'
+      about: ''
   
     },
     {
@@ -57,7 +56,7 @@ FSJS project 1 - A Random Quote Generator
   
       source: 'Rob Siltanen',
   
-      about: 'the Founder and Chief Creative Officer of advertising agency Siltanen & Partners'
+      about: '(the Founder and Chief Creative Officer of advertising agency Siltanen & Partners)'
   
     },
 
@@ -92,6 +91,9 @@ return ranNum
 
 };
 
+
+  
+
 //funtcion to print random qoute properties
 function printQuote()
 {
@@ -102,10 +104,11 @@ var ranSource = quotes[ranNum].source;
 var ranAbout = quotes[ranNum].about;
 var ranQuotehtml = '<p class="quote">' + ranQuote + '</p>';
 var ranSourcehtml = '<p class="source">' + ranSource + '</p>';
-var ranAbouthtml = '<p class="about">' + '('+ranAbout+')' + '</p>';
+var ranAbouthtml = '<p class="about">' + ranAbout + '</p>';
 var message = ranQuotehtml+ranSourcehtml+ranAbouthtml
 //return document.write(ranQuotehtml,ranSourcehtml);
 document.getElementById('quote-box').innerHTML = message;
+
 };
 
 
@@ -123,6 +126,10 @@ document.body.style.backgroundColor  = ranBgColor;
 
 printQuote();
 changeBgColor();
+
+//set timer to change quote after 20 seconds
+setInterval(printQuote, 20000);
+
 
 //pick random quote when you click the button
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
