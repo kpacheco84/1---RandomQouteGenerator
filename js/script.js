@@ -91,7 +91,17 @@ return ranNum
 
 };
 
+//function to grab random color
+function changeBgColor()
+{
+  
+ var ranNum = getRandomColor();
+ var ranBgColor = bgColors[ranNum];
 
+//change the background color
+document.body.style.backgroundColor  = ranBgColor;
+
+};
   
 
 //funtcion to print random qoute properties
@@ -108,24 +118,14 @@ var ranAbouthtml = '<p class="about">' + ranAbout + '</p>';
 var message = ranQuotehtml+ranSourcehtml+ranAbouthtml
 //return document.write(ranQuotehtml,ranSourcehtml);
 document.getElementById('quote-box').innerHTML = message;
-
+changeBgColor();
 };
 
 
-//function to grab random color
-function changeBgColor()
-{
-  
- var ranNum = getRandomColor();
- var ranBgColor = bgColors[ranNum];
 
-//change the background color
-document.body.style.backgroundColor  = ranBgColor;
-
-};
 
 printQuote();
-changeBgColor();
+
 
 //set timer to change quote after 20 seconds
 setInterval(printQuote, 20000);
