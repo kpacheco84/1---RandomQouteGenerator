@@ -129,7 +129,7 @@ changeBgColor();
 
 //set timer to change quote after 20 seconds
 setInterval(printQuote, 20000);
-
+setInterval(changeBgColor, 20000);
 
 //pick random quote when you click the button
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
